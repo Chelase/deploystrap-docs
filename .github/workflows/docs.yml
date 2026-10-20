@@ -1,0 +1,72 @@
+name: 文档构建与发布
+
+on:
+  push:
+    branches: [master, dev]
+    paths:
+      - 'docs/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.node-version'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.node-version'
+      - '.github/workflows/docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: 构建 VitePress
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: 配置 Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: 安装文档依赖
+        run: npm ci
+      - name: 构建文档（含内部链接检查）
+        run: npm run docs:build
+        env:
+          DOCS_BASE: /${{ github.event.repository.name }}/
+      - name: 上传 Pages 产物
+        if: github.repository == 'Chelase/deploystrap-docs' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    name: 发布到 GitHub Pages
+    if: github.repository == 'Chelase/deploystrap-docs' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检查 Pages 配置
+        uses: actions/configure-pages@v6
+      - name: 部署文档
+        id: deployment
+        uses: actions/deploy-pages@v5
