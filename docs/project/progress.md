@@ -14,7 +14,7 @@
 | 桌面端 | OpenClaw、Hermes、AI 工具、备份、恢复、验证、卸载、设置八个面板 | 完整实机端到端走查仍待完成 |
 | 工具链安装 | Node / Git / Claude Code / Codex CLI / OpenCode / oh-my-opencode | 已有降级安装与完成后回查机制 |
 | 配置通道 | OpenClaw 官方 patch；Hermes 官方 config 读写 | 能力应以目标机器所安装的 CLI 为准 |
-| 文档站 | VitePress、中文导航、本地搜索、明暗主题 | 构建与预览在本次任务验证；公网部署以 Actions 成功为准 |
+| 文档站 | VitePress、中文导航、本地搜索、明暗主题 | 2026-10-20：本地构建／预览通过，独立公开文档仓库 Actions 构建与 Pages 部署成功，公网首页返回 HTTP 200 |
 
 ## 主线仍缺什么
 
