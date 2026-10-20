@@ -26,6 +26,7 @@ export default defineConfig({
           { text: '认识 Deploystrap', link: '/guide/' },
           { text: '快速开始', link: '/guide/getting-started' },
           { text: '安装 AI 工具链', link: '/guide/toolchain' },
+          { text: '随身盘（U 盘便携）', link: '/guide/portable' },
           { text: '备份与恢复', link: '/guide/migration' },
           { text: '凭证与加密', link: '/guide/security' }
         ]

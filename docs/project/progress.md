@@ -11,8 +11,9 @@
 | CLI 迁移 | `backup` / `restore` / `uninstall` / `verify` / `list` 五个子命令 | CLI 归档往返与三级卸载在 2026-09-15 有实测记录 |
 | CLI 双引擎 | official / legacy 分派、归档类型识别、OpenClaw 可执行解析 | 2026-09-28 机制文档已有记录；本次核对源码，未重跑迁移 |
 | 加密归档 | AES-256-GCM，CLI 与桌面端共享容器 | 历史测试覆盖跨端容器与错误口令；非通用个人档案 |
-| 桌面端 | OpenClaw、Hermes、AI 工具、备份、恢复、验证、卸载、设置八个面板 | 完整实机端到端走查仍待完成 |
+| 桌面端 | OpenClaw、Hermes、AI 工具、随身盘、备份、恢复、验证、卸载、设置九个面板 | 完整实机端到端走查仍待完成 |
 | 工具链安装 | Node / Git / Claude Code / Codex CLI / OpenCode / oh-my-opencode | 已有降级安装与完成后回查机制 |
+| 随身盘 | 四个 AI CLI 的可执行文件与配置复制到 U 盘，盘内启动脚本重定向配置目录 | 2026-10-20：端到端复制约 1.2 GB，四个 `start-*.cmd --version` 均返回版本号；凭证以明文落盘，加密尚未实现 |
 | 配置通道 | OpenClaw 官方 patch；Hermes 官方 config 读写 | 能力应以目标机器所安装的 CLI 为准 |
 | 文档站 | VitePress、中文导航、本地搜索、明暗主题 | 2026-10-20：本地构建／预览通过，独立公开文档仓库 Actions 构建与 Pages 部署成功，公网首页返回 HTTP 200 |
 
