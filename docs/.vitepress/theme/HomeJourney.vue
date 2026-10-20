@@ -4,7 +4,7 @@ import { withBase } from 'vitepress'
 const steps = [
   { number: '01', title: '装齐工具链', detail: 'Node · Git · AI CLI', status: '已有实现', link: '/guide/toolchain.html' },
   { number: '02', title: '带上自己的上下文', detail: '从 OpenClaw 加密备份起步', status: '已有子能力', link: '/guide/migration.html' },
-  { number: '03', title: '接入 Agent 协作', detail: 'AOC 本地体验与设备接入', status: '规划中', link: '/project/roadmap.html', planned: true }
+  { number: '03', title: '校验迁移结果', detail: '归档完整性 · 恢复后核验', status: '已有实现', link: '/reference/cli.html' }
 ]
 </script>
 

@@ -56,7 +56,7 @@ VitePress 固定为稳定版 1.6.4。根包通过 `overrides` 将间接依赖 Vi
 
 ## 内容更新规则
 
-愿景以 `.agent-rules/rules/product-vision.md` 为准；计划以 `.agent-rules/dev-plans/aoc-installer-plan.md` 为准；能力判断核对当前源码。公开页面不直接发布 `.agent-rules/`，也不自动收录含旧描述的根文档。
+公开文档仅涵盖 AI 开发环境随身、工具链准备、配置携带、备份恢复与校验。能力判断核对当前源码，规划项明确标注。公开页面不直接发布内部规则与计划，也不自动收录根文档。
 
 更新产品进展时，同时核对公开的「当前能力与验证」和根 `DEVELOPMENT-PROGRESS.md`。历史测试保留实际日期，未执行的检查不能写成通过。
 

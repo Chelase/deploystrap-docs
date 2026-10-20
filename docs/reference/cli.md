@@ -17,7 +17,7 @@ deploystrap backup --help
 | `list <backup_file>` | 列出自有 ZIP / `.enc` 归档内容 |
 | `uninstall` | 卸载实例，具有真实删除行为 |
 
-全局选项：`-v, --verbose`、`-q, --quiet`、`-l, --log <path>`。当前没有 `aoc`、`doctor` 或安装工具链的 CLI 命令。
+全局选项：`-v, --verbose`、`-q, --quiet`、`-l, --log <path>`。当前工具链安装通过桌面端操作。
 
 ## backup
 

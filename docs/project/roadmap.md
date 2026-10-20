@@ -1,31 +1,19 @@
 # 开发路线
 
-本页概述下一阶段，具体实施以仓库 [AOC 安装器计划](https://github.com/Chelase/deploystrap/blob/master/.agent-rules/dev-plans/aoc-installer-plan.md)为准。当前处于 **Phase 0，AOC MVP 尚未开工**。
-
-## AOC MVP
-
-| 顺序 | 计划能力 | 验收方向 |
-| --- | --- | --- |
-| 1 | CLI 骨架与环境检测 | 干净 Windows 准确报告缺失项 |
-| 2 | Python / pip 容灾安装 | 从缺少环境到依赖可用 |
-| 3 | 本地体验安装 | 配置模型并启动，调用官方状态／健康检查 |
-| 4 | 加密接入胶囊 | 双机接入成功，错误口令失败关闭 |
-| 5 | GUI AOC 面板 | 检测 → 安装 → 回查闭环 |
-
-这些都是计划，不是当前命令。`aoc doctor`、`aoc install`、`aoc attach` 等名称仍属规划。
+本页概述工具链准备、个人上下文携带与迁移验证的后续工作。规划项不代表当前版本已交付，现有能力见[当前能力与验证](./progress)。
 
 ## 既有能力验收
 
 优先补齐桌面端实机闭环：加密备份与恢复、文件选择、进度事件，以及三个安装面板的安装与回查。之后补跨平台路径转换和自动化 GUI 验证。
 
-通用个人上下文档案需要明确配置覆盖范围、凭证强制加密与恢复后的可用性验证；当前 OpenClaw 归档是基础资产。
+## 通用个人上下文档案
 
-## Phase 2
+当前 OpenClaw 归档是基础资产。后续需要明确更多工具的配置覆盖范围、全局规则与 prompts 的携带方式，以及凭证强制加密和恢复后的可用性验证。
 
-AOC MVP 稳定之后，再推进通过 SSH 驱动的 Linux 中心部署。安装器不承担 AOC 本身的源码改造。
+## 安装与恢复体验
+
+继续完善安装失败后的重试与手动引导，让工具状态回查、错误提示和恢复校验形成完整操作流程。按实际场景判断是否可用，并持续记录尚未覆盖的环境。
 
 ## 分发链路
 
-文档站先接入 GitHub Pages 自动发布。应用本身的全平台构建、测试、Release、签名以及 crates.io 分发，在 MVP 验证后继续推进。
-
-更多优先级见仓库 [ROADMAP.md](https://github.com/Chelase/deploystrap/blob/master/ROADMAP.md)。
+文档站已通过 GitHub Actions 自动发布到 Pages。应用本身的全平台构建、测试、Release、签名以及 crates.io 分发，待核心使用场景验证后继续推进。
